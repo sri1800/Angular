@@ -1,0 +1,25 @@
+.app-footer {
+  background-color: #282c34;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  position: relative; /* Use fixed or sticky if you want */
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content nav a {
+  color: #bbb;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-content nav a:hover {
+  text-decoration: underline;
+  color: #fff;
+}

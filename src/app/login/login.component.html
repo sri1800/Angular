@@ -1,0 +1,19 @@
+<div class="container">
+  <div *ngIf="!isLoginSuccess" class="alert">
+    Username or Password is not correct!
+  </div>
+
+  <h3>Login</h3>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="email" autocomplete="off" />
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" [(ngModel)]="password" autocomplete="off" />
+  </div>
+
+  <button (click)="handlelogin()">Login</button>
+</div>

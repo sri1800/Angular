@@ -1,0 +1,20 @@
+/* Ensure full height for layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Flex container */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Makes router content grow to fill available space */
+.container {
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
