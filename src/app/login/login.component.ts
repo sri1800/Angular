@@ -8,27 +8,28 @@ import { Route, Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent  {
+export class LoginComponent implements OnInit  {
  email="";
  password="";
  isLoginSuccess: boolean=true;
 
   constructor(private route:Router,private authService:AuthenticationServiceService){  }
+  ngOnInit(): void {
+    sessionStorage.clear();
+  }
 
   handlelogin() {
     const postData={
       email:this.email,
       password:this.password
     };
-    this.authService.handleBEAuthenticaation(postData).subscribe({
+    this.authService.handleBEAuthentication(postData).subscribe({
       next:(successResponse)=>{
+        this.isLoginSuccess=true;
         const userId = successResponse.headers.get('userId'); 
         const firstname=successResponse.headers.get('Fname');
 
-        console.log("userid: "+userId);      
-        console.log("firstname : "+firstname);
-
-       this.route.navigate(['/welcome',firstname],{queryParams:{userId:userId}});
+       this.route.navigate(['/welcome',firstname],{queryParams:{userId:userId},replaceUrl:true});
 
       },
       error:(errorResponse)=>{

@@ -1,0 +1,38 @@
+<div class="registration-container">
+  <h2>User Registration</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <label for="fname" class="form-label">First Name</label>
+      <input id="fname" formControlName="fname" type="text" class="form-control" />
+        <div *ngIf="registerForm.controls['fname'].invalid && registerForm.controls['fname'].touched" >
+        <div *ngIf="registerForm.controls['fname'].errors?.['required']">Username is a required field</div>
+        <div *ngIf="registerForm.controls['fname'].errors?.['minlength']">Minimum 3 characters are required</div></div>
+
+    <label for="lname" class="form-label">last Name</label>
+      <input id="lname" formControlName="lname" type="text" class="form-control" />
+        <div *ngIf="registerForm.controls['lname'].invalid && registerForm.controls['lname'].touched" >
+        <div *ngIf="registerForm.controls['lname'].errors?.['required']">Username is a required field</div>
+        <div *ngIf="registerForm.controls['lname'].errors?.['minlength']">Minimum 3 characters are required</div></div>
+
+    <label for="email" class="form-label">Email</label>
+      <input id="email" formControlName="email" type="email" class="form-control" />
+        <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" >
+        <div *ngIf="registerForm.controls['email'].errors?.['required']">Email is a required field</div>
+        <div *ngIf="registerForm.controls['email'].errors?.['email']">Please enter a valid email</div></div>
+
+    <label for="password" class="form-label">Password</label>
+        <input id="password" formControlName="password" type="password" class="form-control" />
+          <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" >
+          <div *ngIf="registerForm.controls['password'].errors?.['required']">Password is a required field</div>
+          <div *ngIf="registerForm.controls['password'].errors?.['minlength']">Minimum 8 characters required</div>
+          <div *ngIf="registerForm.controls['password'].errors?.['maxlength']">Maximum 16 characters allowed</div></div>
+
+     <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" class="form-control" />
+          <div *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched" >
+            <div>Passwords do not match</div></div>
+          
+
+    <button type="submit" class="btn btn-primary w-100" [disabled]="registerForm.invalid">Register</button>
+</form>
+</div>

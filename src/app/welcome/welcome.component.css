@@ -1,0 +1,46 @@
+.welcome-card {
+  background-color: #ffffff;
+  padding: 30px 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.welcome-card:hover {
+  transform: scale(1.02);
+}
+
+.welcome-card p {
+  color: #28a745;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.welcome-card h1 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #2c3e50;
+}
+
+.welcome-card h2 {
+  font-size: 18px;
+  color: #34495e;
+}
+
+.welcome-card a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 8px;
+  transition: color 0.3s ease;
+}
+
+.welcome-card a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}

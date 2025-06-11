@@ -1,0 +1,21 @@
+<div class="container">
+    <form #todoForm="ngForm" (ngSubmit)="saveTodo(todoForm)" >
+        
+        <fieldset class="form-control">
+            <label>Name</label>
+            <input type="text" #name="ngModel" name="name" [(ngModel)]="todoObj.name"  required="required">
+        </fieldset>
+
+        <fieldset class="form-control">
+            <label>Description</label>
+            <input type="text" #name="ngModel" name="description" [(ngModel)]="todoObj.description"  required="required" >
+        </fieldset>
+
+        <fieldset class="form-control">
+            <label>EndTime</label>
+            <input type="date" name="endTime" [ngModel]="todoObj.endTime | date:'yyyy-MM-dd'" (ngModelChange)="todoObj.endTime" required="required" >
+        </fieldset>
+
+        <button type="submit" >{{buttonName}}</button>
+    </form>
+</div>

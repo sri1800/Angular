@@ -1,20 +1,33 @@
-/* Ensure full height for layout */
+/* Ensure html and body take full height and use Flexbox */
 html, body {
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
-}
-
-/* Flex container */
-.main-layout {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden; /* Prevent scroll */
+  box-sizing: border-box;
+  
 }
 
-/* Makes router content grow to fill available space */
-.container {
+/* Main content should take all remaining space */
+.main-content {
   flex: 1;
-  padding: 20px;
-  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+  background: linear-gradient(to right, #e0f7fa, #e3f2fd);
+  overflow: hidden; /* prevent scroll inside main */
+}
+
+/* Optional: Header & Footer styles */
+app-header,
+app-footer {
+  flex-shrink: 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  z-index: 10;
 }

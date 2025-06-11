@@ -1,3 +1,5 @@
-<p>Login Success</p>
-<h1>Welcome {{name}} to Todo Application </h1>
-<h2>List of todo tasks are <a [routerLink]="['/todo',name]" [queryParams]="{userId:userId}">Here</a></h2>
+<div class="welcome-card">
+  <p>Login Success</p>
+  <h1>Welcome {{name}} to Todo Application</h1>
+  <h2>List of todo tasks are <a [routerLink]="['/todos', name]" [queryParams]="{ userId: userId }">Here</a></h2>
+</div>
