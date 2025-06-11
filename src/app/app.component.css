@@ -6,7 +6,7 @@ html, body {
   display: flex;
   flex-direction: column;
   font-family: 'Segoe UI', sans-serif;
-  overflow: hidden; /* Prevent scroll */
+  /* overflow: hidden; Prevent scroll */
   box-sizing: border-box;
   
 }
@@ -20,7 +20,7 @@ html, body {
   padding: 16px;
   box-sizing: border-box;
   background: linear-gradient(to right, #e0f7fa, #e3f2fd);
-  overflow: hidden; /* prevent scroll inside main */
+  /* overflow: hidden; prevent scroll inside main */
 }
 
 /* Optional: Header & Footer styles */

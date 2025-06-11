@@ -11,6 +11,10 @@ import { Router } from '@angular/router';
 export class RegistrationComponent implements OnInit 
 {
 
+  onPaste(event:ClipboardEvent) {
+  event.preventDefault();
+}
+
   registerForm: FormGroup = new FormGroup({});
   errorMessage: string="";
   constructor(private fb: FormBuilder,private userservice:UserServiceService,private route:Router){}
